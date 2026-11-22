@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>You’re invited · Dayform</title>
+<style>
+  :root { --bg:#FBF7F2; --card:#FFFFFF; --ink:#2B2238; --soft:#6E6478; --accent:#E0634F; --plum:#5B3A6B; --plum-ink:#FFFFFF; --line:#ECE4DA; --sunken:#F3ECE3; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#17131C; --card:#221C29; --ink:#F6F0EA; --soft:#B9AFC2; --plum:#C9A7DB; --plum-ink:#1B1420; --line:#3A3242; --sunken:#1D1823; } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:18px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; -webkit-font-smoothing:antialiased; }
+  main { max-width:520px; margin:0 auto; padding:28px 20px calc(40px + env(safe-area-inset-bottom)); display:flex; flex-direction:column; gap:22px; }
+  .brand { font-weight:700; letter-spacing:-.02em; font-size:22px; }
+  .brand span { color:var(--accent); }
+  h1 { font-size:32px; line-height:1.15; letter-spacing:-.02em; margin:0; font-family:"Iowan Old Style",Georgia,serif; font-weight:600; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:24px; padding:22px; display:flex; flex-direction:column; gap:14px; }
+  .muted { color:var(--soft); font-size:16px; margin:0; }
+  .code { direction:ltr; unicode-bidi:isolate; text-align:center; font-size:30px; font-weight:700; letter-spacing:.08em; font-variant-numeric:tabular-nums; background:var(--sunken); border:1px solid var(--line); border-radius:18px; padding:18px 10px; overflow-wrap:anywhere; -webkit-user-select:all; user-select:all; }
+  a.action, button.action { display:flex; align-items:center; justify-content:center; text-align:center; width:100%; min-height:58px; border-radius:18px; border:0; font:inherit; font-size:19px; font-weight:650; background:var(--plum); color:var(--plum-ink); cursor:pointer; text-decoration:none; padding:10px 16px; }
+  button.secondary { background:transparent; color:var(--ink); border:1.5px solid var(--line); }
+  ol { margin:0; padding-inline-start:1.3em; display:flex; flex-direction:column; gap:6px; }
+  .hidden { display:none !important; }
+</style>
+</head>
+<body>
+<main>
+  <div class="brand">dayform<span> ✦</span></div>
+
+  <section id="invalid" class="card hidden">
+    <h1>This referral link is incomplete</h1>
+    <p class="muted">Ask your friend to send their Dayform referral link again, or type the code they gave you into Dayform: Settings › Have a referral code?</p>
+  </section>
+
+  <section id="invite" class="hidden" style="display:flex;flex-direction:column;gap:22px">
+    <h1>A friend invited you to Dayform</h1>
+    <p class="muted">Dayform is a private food, workout and journal diary for iPhone.</p>
+    <div class="card">
+      <p class="muted">Your friend’s referral code</p>
+      <div id="code" class="code" aria-label="Referral code"></div>
+      <button id="copy" class="action secondary" type="button">Copy code</button>
+    </div>
+    <a id="store" class="action" rel="noopener">Get Dayform on the App Store</a>
+    <div class="card">
+      <ol>
+        <li>Install Dayform.</li>
+        <li>Open it.</li>
+        <li>Tap this link again, or enter the code in Settings › Have a referral code?</li>
+      </ol>
+      <p class="muted">Using the code costs you nothing. It thanks your friend with a free month once you have had Dayform for a week. Enter it before you start referring friends yourself.</p>
+    </div>
+    <p id="other" class="muted hidden">Dayform is for iPhone. Open this link on yours.</p>
+    <p class="muted">This page has no trackers and no cookies. The code is kept after the # in the link, which your browser never sends to the website.</p>
+  </section>
+
+  <noscript><section class="card"><p class="muted">Your referral code is the part of this link after the #. Enter it in Dayform: Settings › Have a referral code?</p></section></noscript>
+</main>
+<script>
+(function () {
+  'use strict';
+  // Dayform's numeric Apple ID (App Store Connect > App Information).
+  // Until it is replaced, the App Store button and Safari's app banner are not shown.
+  var APP_STORE_ID = '6834486675';
+  // ================================================================================================================
+  var ALPHABET = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
+  function read(text) {
+    var s = '';
+    try { s = decodeURIComponent(text || ''); } catch (e) { return null; }
+    s = s.replace(/^#/, '').toUpperCase().replace(/[\s\-_]/g, '');
+    if (s.indexOf('DF') === 0 && s.length === 10) s = s.slice(2);
+    if (s.length !== 8) return null;
+    for (var i = 0; i < s.length; i++) if (ALPHABET.indexOf(s.charAt(i)) < 0) return null;
+    return 'DF-' + s.slice(0, 4) + '-' + s.slice(4);
+  }
+  var code = read(location.hash);
+  if (!code) { document.getElementById('invalid').classList.remove('hidden'); return; }
+  var link = location.origin + location.pathname + '#' + code;
+  // Shown with textContent only: nothing from the link is ever treated as HTML.
+  document.getElementById('code').textContent = code;
+  document.getElementById('invite').classList.remove('hidden');
+  var haveId = /^[0-9]+$/.test(APP_STORE_ID);
+  if (haveId) document.getElementById('store').href = 'https://apps.apple.com/app/id' + APP_STORE_ID;
+  else document.getElementById('store').classList.add('hidden');
+  // Safari's own banner: "Open" when Dayform is installed, and it hands this link to the app.
+  if (haveId) {
+    var banner = document.createElement('meta');
+    banner.name = 'apple-itunes-app';
+    banner.content = 'app-id=' + APP_STORE_ID + ', app-argument=' + link;
+    document.head.appendChild(banner);
+  }
+  var apple = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  if (!apple) document.getElementById('other').classList.remove('hidden');
+  var copy = document.getElementById('copy');
+  copy.addEventListener('click', function () {
+    var done = function () { copy.textContent = 'Copied'; setTimeout(function () { copy.textContent = 'Copy code'; }, 2500); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(code).then(done, function () {});
+    else { var range = document.createRange(); range.selectNodeContents(document.getElementById('code')); var sel = getSelection(); sel.removeAllRanges(); sel.addRange(range); try { if (document.execCommand('copy')) done(); } catch (e) {} }
+  });
+})();
+</script>
+</body>
+</html>
