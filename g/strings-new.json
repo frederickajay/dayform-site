@@ -1,0 +1,66 @@
+{
+  "_comment": "Landing page strings that are not in the app's catalog. The rest come from Resources/Localizable.xcstrings (build.py).",
+  "open": {
+    "en": "Open your gift", "es": "Abre tu regalo", "fr": "Ouvrir ton cadeau", "de": "Geschenk öffnen", "pt-BR": "Abrir seu presente",
+    "it": "Apri il tuo regalo", "nl": "Open je cadeau", "pl": "Otwórz prezent", "tr": "Hediyeni aç", "ru": "Открыть подарок",
+    "uk": "Відкрити подарунок", "ar": "افتح هديتك", "ja": "ギフトを開く", "ko": "선물 열기", "zh-Hans": "打开你的礼物",
+    "zh-Hant": "打開你的禮物", "id": "Buka hadiahmu", "vi": "Mở quà của bạn", "th": "เปิดของขวัญของคุณ"
+  },
+  "opening": {
+    "en": "Opening…", "es": "Abriendo…", "fr": "Ouverture…", "de": "Wird geöffnet …", "pt-BR": "Abrindo…",
+    "it": "Apertura…", "nl": "Bezig met openen…", "pl": "Otwieranie…", "tr": "Açılıyor…", "ru": "Открываем…",
+    "uk": "Відкриваємо…", "ar": "جارٍ الفتح…", "ja": "開いています…", "ko": "여는 중…", "zh-Hans": "正在打开…",
+    "zh-Hant": "正在打開…", "id": "Membuka…", "vi": "Đang mở…", "th": "กำลังเปิด…"
+  },
+  "installed": {
+    "en": "Open Dayform when it's installed. Your year is already active.",
+    "es": "Abre Dayform cuando se haya instalado. Tu año ya está activo.",
+    "fr": "Ouvre Dayform une fois installé. Ton année est déjà active.",
+    "de": "Öffne Dayform, sobald es installiert ist. Dein Jahr ist schon aktiv.",
+    "pt-BR": "Abra o Dayform quando ele estiver instalado. Seu ano já está ativo.",
+    "it": "Apri Dayform quando è installata. Il tuo anno è già attivo.",
+    "nl": "Open Dayform zodra het is geïnstalleerd. Je jaar is al actief.",
+    "pl": "Otwórz Dayform po instalacji. Twój rok jest już aktywny.",
+    "tr": "Dayform yüklendiğinde aç. Yılın zaten etkin.",
+    "ru": "Откройте Dayform, когда приложение установится. Ваш год уже активен.",
+    "uk": "Відкрийте Dayform, коли застосунок установиться. Ваш рік уже активний.",
+    "ar": "افتح Dayform بعد تثبيته. سنتك مفعّلة بالفعل.",
+    "ja": "インストールが終わったら Dayform を開いてください。1年分はすでに有効です。",
+    "ko": "설치가 끝나면 Dayform을 여세요. 1년 이용권은 이미 활성화되었습니다.",
+    "zh-Hans": "安装完成后打开 Dayform。你的一年会员已生效。",
+    "zh-Hant": "安裝完成後打開 Dayform。你的一年會員已生效。",
+    "id": "Buka Dayform setelah terpasang. Satu tahunmu sudah aktif.",
+    "vi": "Mở Dayform khi đã cài xong. Năm của bạn đã được kích hoạt.",
+    "th": "เปิด Dayform เมื่อติดตั้งเสร็จ ปีของคุณเริ่มใช้งานแล้ว"
+  },
+  "iphone": {
+    "en": "Open this on your iPhone.", "es": "Abre esto en tu iPhone.", "fr": "Ouvre ce lien sur ton iPhone.",
+    "de": "Öffne das auf deinem iPhone.", "pt-BR": "Abra isto no seu iPhone.", "it": "Apri questo link sul tuo iPhone.",
+    "nl": "Open dit op je iPhone.", "pl": "Otwórz to na iPhonie.", "tr": "Bunu iPhone’unda aç.",
+    "ru": "Откройте эту ссылку на iPhone.", "uk": "Відкрийте це посилання на iPhone.", "ar": "افتح هذا على iPhone.",
+    "ja": "iPhone で開いてください。", "ko": "iPhone에서 여세요.", "zh-Hans": "请在 iPhone 上打开。",
+    "zh-Hant": "請在 iPhone 上打開。", "id": "Buka ini di iPhone-mu.", "vi": "Hãy mở trên iPhone của bạn.",
+    "th": "เปิดลิงก์นี้บน iPhone ของคุณ"
+  },
+  "privacy": {
+    "en": "This page has no trackers and no cookies. The names and note stay after the # in the link, which your browser never sends to the website.",
+    "es": "Esta página no tiene rastreadores ni cookies. Los nombres y la nota van después del # del enlace, y tu navegador nunca los envía al sitio web.",
+    "fr": "Cette page n’a ni traceurs ni cookies. Les prénoms et le mot restent après le # du lien, que ton navigateur n’envoie jamais au site.",
+    "de": "Diese Seite hat keine Tracker und keine Cookies. Namen und Nachricht stehen nach dem # im Link, den dein Browser nie an die Website sendet.",
+    "pt-BR": "Esta página não tem rastreadores nem cookies. Os nomes e o recado ficam depois do # no link, que o navegador nunca envia ao site.",
+    "it": "Questa pagina non ha tracker né cookie. I nomi e il messaggio restano dopo il # nel link, che il browser non invia mai al sito.",
+    "nl": "Deze pagina heeft geen trackers en geen cookies. De namen en het bericht staan na de # in de link, die je browser nooit naar de website stuurt.",
+    "pl": "Ta strona nie ma trackerów ani plików cookie. Imiona i liścik są po znaku # w linku, którego przeglądarka nigdy nie wysyła do witryny.",
+    "tr": "Bu sayfada izleyici ve çerez yok. İsimler ve not, bağlantıdaki # işaretinden sonra durur; tarayıcın bunu siteye hiç göndermez.",
+    "ru": "На этой странице нет трекеров и cookie. Имена и записка стоят после # в ссылке, а эту часть браузер никогда не отправляет сайту.",
+    "uk": "На цій сторінці немає трекерів і cookie. Імена й записка стоять після # у посиланні, а цю частину браузер ніколи не надсилає сайту.",
+    "ar": "لا تحتوي هذه الصفحة على أدوات تتبّع ولا ملفات تعريف ارتباط. الأسماء والرسالة موجودة بعد # في الرابط، ولا يرسلها متصفحك إلى الموقع أبدًا.",
+    "ja": "このページにはトラッカーも Cookie もありません。名前とメッセージはリンクの # の後ろにあり、ブラウザがサイトに送ることはありません。",
+    "ko": "이 페이지에는 추적기와 쿠키가 없습니다. 이름과 메시지는 링크의 # 뒤에 있으며, 브라우저는 이 부분을 웹사이트로 보내지 않습니다.",
+    "zh-Hans": "此页面没有跟踪器，也没有 Cookie。名字和留言在链接的 # 之后，浏览器从不会把这部分发送给网站。",
+    "zh-Hant": "此頁面沒有追蹤器，也沒有 Cookie。名字和留言在連結的 # 之後，瀏覽器從不會把這部分傳送給網站。",
+    "id": "Halaman ini tanpa pelacak dan tanpa cookie. Nama dan pesan ada setelah # di tautan, yang tidak pernah dikirim browser ke situs web.",
+    "vi": "Trang này không có trình theo dõi và không có cookie. Tên và lời nhắn nằm sau dấu # trong liên kết, phần mà trình duyệt không bao giờ gửi đến trang web.",
+    "th": "หน้านี้ไม่มีตัวติดตามและไม่มีคุกกี้ ชื่อและข้อความอยู่หลังเครื่องหมาย # ในลิงก์ ซึ่งเบราว์เซอร์จะไม่ส่งไปยังเว็บไซต์"
+  }
+}
